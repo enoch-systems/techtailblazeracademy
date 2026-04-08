@@ -6,24 +6,28 @@ const FAQ = () => {
 
     const faqs = [
         {
-            question: "What types of courses do you offer?",
-            answer: "We offer a wide range of courses including web development, design, data science, marketing, and business skills. Our courses are designed by industry experts to help you advance your career."
+            question: "Are your courses self paced or live?",
+            answer: "Live"
         },
         {
             question: "Can I access the courses on my mobile device?",
-            answer: "Yes! All our courses are fully responsive and can be accessed on any device including smartphones, tablets, and desktops. Learn on the go, anytime, anywhere."
+            answer: "Yes"
         },
         {
-            question: "Do you provide certificates upon course completion?",
-            answer: "Absolutely. Upon successfully completing any course, you'll receive a verified digital certificate that you can share on your LinkedIn profile or add to your resume."
+            question: "Do you provide certification upon course completion?",
+            answer: "Yes"
         },
         {
-            question: "Are the courses self-paced or live?",
-            answer: "Our courses are primarily self-paced, allowing you to learn at your own convenience. However, we also offer live sessions and webinars for certain programs."
+            question: "Are there refund requests?",
+            answer: "No"
         },
         {
-            question: "Is there a money-back guarantee?",
-            answer: "Yes, we offer a 30-day money-back guarantee. If you're not satisfied with your learning experience, contact us within 30 days for a full refund."
+            question: "What types of courses do you offer?",
+            answer: "A real time job opportunity tech skills"
+        },
+        {
+            question: "Can I pay by installment?",
+            answer: "No"
         }
     ]
 

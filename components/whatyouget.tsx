@@ -147,7 +147,7 @@ const WhatYouGet = () => {
     ]
 
     return (
-        <div className="w-full lg:px-40 py-8 md:py-10 lg:py-12 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-x-hidden">
+        <div className="w-full px-2 lg:px-40 py-8 md:py-10 lg:py-12 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-x-hidden">
             <div className="mx-auto max-w-8xl lg:mx-auto md:mx-auto sm:mx-auto">
                 {/* Header */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-8 text-center font-sf-display bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
