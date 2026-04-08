@@ -96,6 +96,23 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+              }
+              window.addEventListener('beforeunload', function() {
+                window.scrollTo(0, 0);
+              });
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  window.scrollTo(0, 0);
+                }, 0);
+              });
+            `,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>
