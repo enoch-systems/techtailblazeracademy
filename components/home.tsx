@@ -5,7 +5,7 @@ import Stat from './stat'
 
 const Home = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [showHero1, setShowHero1] = useState(false)
+    const [currentHeroIndex, setCurrentHeroIndex] = useState(0)
     
     const images = [
         '/a1.png',
@@ -18,9 +18,8 @@ const Home = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setShowHero1((prev) => {
-                const newValue = !prev
-                return newValue
+            setCurrentHeroIndex((prev) => {
+                return (prev + 1) % 4
             })
         }, 5000)
         return () => clearInterval(interval)
@@ -42,22 +41,22 @@ const Home = () => {
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center space-x-8">
-                            <a href="#" className="z-50 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors flex items-center gap-1 bg-gray-200" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                            <a href="#" className="z-50 text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors flex items-center gap-1 bg-gray-200/80 backdrop-blur-md" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Pages
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </a>
-                            <a href="#" className="z-50 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors flex items-center gap-1 bg-gray-200" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                            <a href="#" className="z-50 text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors flex items-center gap-1 bg-gray-200/80 backdrop-blur-md" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Courses
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </a>
-                            <a href="#" className="z-50 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors bg-gray-200" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>About us</a>
-                            <a href="#" className="z-50 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors bg-gray-200" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>Reviews</a>
-                            <a href="#" className="z-50 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors bg-gray-200" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>Blog</a>
-                            <a href="#" className="z-50 text-gray-700 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors bg-gray-200" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>Contact</a>
+                            <a href="#" className="z-50 text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>About us</a>
+                            <a href="#" className="z-50 text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>Reviews</a>
+                            <a href="#" className="z-50 text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>Blog</a>
+                            <a href="#" className="z-50 text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>Contact</a>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -82,12 +81,12 @@ const Home = () => {
                 {mobileMenuOpen && (
                     <div className="lg:hidden bg-white border-t">
                         <div className="px-4 py-2 space-y-1">
-                            <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Pages</a>
-                            <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Courses</a>
-                            <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">About us</a>
-                            <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Reviews</a>
-                            <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Blog</a>
-                            <a href="#" className="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Contact</a>
+                            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-black rounded-md">Pages</a>
+                            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-black rounded-md">Courses</a>
+                            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-black rounded-md">About us</a>
+                            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-black rounded-md">Reviews</a>
+                            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-black rounded-md">Blog</a>
+                            <a href="#" className="block px-3 py-2 text-gray-700 hover:text-white hover:bg-black rounded-md">Contact</a>
                         </div>
                     </div>
                 )}
@@ -103,7 +102,7 @@ const Home = () => {
                 <div className="max-w-9xl mx-0 px-4 sm:px-6 lg:px-0 w-full">
                     <div className="grid grid-cols-1 -mt-46 mx-0 lg:grid-cols-2 gap-12 items-center">
                         {/* Hero Content */}
-                        <div className="text-center space-y-4 relative">
+                        <div className="text-center space-y-4 relative z-[10]">
                             <div className="absolute left-0 -inset-x-4 -inset-y-46 flex items-center justify-center opacity-5 overflow-hidden lg:opacity-5">
                                 <Image src="/a3.png" alt="Background" width={1000} height={750} className="object-contain transform translate-y-0 md:-translate-y-8 lg:translate-y-32 w-[300px] h-[250px] md:w-[350px] lg:w-[900px] lg:h-[650px]" />
                                 {/* Green vertical line where images slide out from */}
@@ -116,29 +115,45 @@ const Home = () => {
                             <p className="text-lg md:text-xl text-black max-w-lg mx-auto select-none pointer-events-none" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Learn from industry experts and gain the skills to advance your career.
                             </p>
-                            <button className="bg-blue-700 text-white hover:bg-blue-700 px-8 py-3 text-lg font-normal rounded-full transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 lg:ml-auto" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                            <button className="z-[500] relative bg-blue-700 text-white hover:bg-blue-700 px-8 py-3 text-lg font-normal rounded-full transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 lg:ml-auto" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Explore courses
                             </button>
                         </div>
 
                         {/* Hero Image */}
-                        <div className="relative flex justify-center -mt-8">
-                            <div className="relative w-[500px] h-[600px]">
+                        <div className="z-[1] relative flex justify-center -mt-8 lg:-mt-8 mb-0 lg:mb-0">
+                            <div className="relative w-[700px] h-[700px] scale-110">
                                 <div className="absolute inset-y-0 -left-8 w-16 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                                 <Image
-                                    src="/fola.png"
+                                    src="/so1.jpeg"
                                     alt="Professional woman"
-                                    width={500}
-                                    height={600}
-                                    className={`rounded-lg object-cover select-none pointer-events-none absolute inset-0 transition-opacity duration-1000 ${showHero1 ? 'opacity-0' : 'opacity-100'}`}
+                                    width={700}
+                                    height={800}
+                                    className={`rounded-lg object-cover select-none pointer-events-none absolute inset-0 transition-opacity duration-1000 scale-110 ${currentHeroIndex === 0 ? 'opacity-100' : 'opacity-0'}`}
                                     priority
                                 />
                                 <Image
-                                    src="/hero2.png"
+                                    src="/so4.jpeg"
                                     alt="Professional woman 2"
-                                    width={500}
-                                    height={600}
-                                    className={`rounded-lg object-cover select-none pointer-events-none absolute inset-0 transition-opacity duration-1000 ${showHero1 ? 'opacity-100' : 'opacity-0'}`}
+                                    width={700}
+                                    height={800}
+                                    className={`rounded-lg object-cover select-none pointer-events-none absolute inset-0 transition-opacity duration-1000 scale-110 ${currentHeroIndex === 1 ? 'opacity-100' : 'opacity-0'}`}
+                                    priority
+                                />
+                                <Image
+                                    src="/so3.jpeg"
+                                    alt="Professional woman 3"
+                                    width={700}
+                                    height={800}
+                                    className={`rounded-lg object-cover select-none pointer-events-none absolute inset-0 transition-opacity duration-1000 scale-110 lg:top-0 top-14 ${currentHeroIndex === 2 ? 'opacity-100' : 'opacity-0'}`}
+                                    priority
+                                />
+                                <Image
+                                    src="/so2.jpeg"
+                                    alt="Professional woman 4"
+                                    width={700}
+                                    height={800}
+                                    className={`rounded-lg object-cover select-none pointer-events-none absolute inset-0 transition-opacity duration-1000 scale-110 ${currentHeroIndex === 3 ? 'opacity-100' : 'opacity-0'}`}
                                     priority
                                 />
                             </div>

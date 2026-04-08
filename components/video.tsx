@@ -20,7 +20,7 @@ const Video = () => {
                 </div>
 
                 {/* Right Image with Mockup */}
-                <div className="relative order-1 lg:order-2 bg-black p-9 md:p-8 rounded-3xl">
+                <div className="relative order-1 lg:order-2 bg-black p-9 md:p-8 rounded-3xl z-[200] -mt-40 lg:-mt-0">
                     {/* Dark device frame - now covers both image and stats */}
                     <div className="bg-[#1a1a1a] rounded-3xl p-4 md:p-6 relative">
                         {/* Inner image container */}
