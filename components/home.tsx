@@ -38,8 +38,13 @@ const Home = () => {
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center space-x-8">
                             {['Pages', 'Courses', 'About us', 'Reviews', 'Blog', 'Contact'].map((item, index) => (
-                                <a key={item} href="#" className="text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md border border-gray-500" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                                <a key={item} href="#" className="text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md border border-gray-300 flex items-center gap-1" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                     {item}
+                                    {(item === 'Pages' || item === 'Courses') && (
+                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    )}
                                 </a>
                             ))}
                         </div>
