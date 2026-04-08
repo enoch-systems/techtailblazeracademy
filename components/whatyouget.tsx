@@ -191,7 +191,7 @@ const WhatYouGet = () => {
                                 </p>
                             </div>
                             <a 
-                                href={`https://wa.me/2349012345678?text=Hello!%20I%20found%20your%20${course.title}%20course%20on%20your%20website.%20I'm%20interested%20in%20enrolling.%20Could%20you%20please%20share%20more%20details%20about%20the%20course%20curriculum%20and%20enrollment%20process?`}
+                                href={`https://wa.me/2349162919586?text=Hello!%20I%20found%20your%20${course.title}%20course%20on%20your%20website.%20I'm%20interested%20in%20enrolling.%20Could%20you%20please%20share%20more%20details%20about%20the%20course%20curriculum%20and%20enrollment%20process?`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full mt-3 px-3 py-1 md:py-3 rounded-3xl text-xs md:text-sm font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-95 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:from-[#128C7E] hover:to-[#0F5132] shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border-2 border-[#25D366] relative overflow-hidden group animate-pulse hover:animate-bounce"
