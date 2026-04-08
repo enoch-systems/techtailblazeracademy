@@ -12,7 +12,7 @@ const WhatYouGet = () => {
             lessons: "40 Lessons",
             hours: "12 Hours",
             size: "Advanced",
-            image: "/vado.jpg"
+            image: "/cybersecurity_course.jpeg"
         },
         {
             title: "Data science",
@@ -22,7 +22,7 @@ const WhatYouGet = () => {
             lessons: "35 Lessons",
             hours: "10 Hours",
             size: "Intermediate",
-            image: "/fola.png"
+            image: "/data_science_course.jpeg"
         },
         {
             title: "AI automation",
@@ -32,7 +32,7 @@ const WhatYouGet = () => {
             lessons: "42 Lessons",
             hours: "14 Hours",
             size: "Advanced",
-            image: "/lapo.png"
+            image: "/ai_course.jpeg"
         },
         {
             title: "Computer networking",
@@ -42,7 +42,7 @@ const WhatYouGet = () => {
             lessons: "30 Lessons",
             hours: "9 Hours",
             size: "Intermediate",
-            image: "/vado.jpg"
+            image: "/neti.jpeg"
         },
         {
             title: "Ethical hacking",
@@ -52,7 +52,7 @@ const WhatYouGet = () => {
             lessons: "38 Lessons",
             hours: "13 Hours",
             size: "Advanced",
-            image: "/fola.png"
+            image: "/ethical_hack.jpeg"
         },
         {
             title: "Graphic Design",
@@ -62,7 +62,7 @@ const WhatYouGet = () => {
             lessons: "28 Lessons",
             hours: "8 Hours",
             size: "Beginner",
-            image: "/lapo.png"
+            image: "/graphic_design_course.jpeg"
         },
         {
             title: "UI/UX design",
@@ -72,7 +72,7 @@ const WhatYouGet = () => {
             lessons: "32 Lessons",
             hours: "9 Hours",
             size: "Beginner",
-            image: "/vado.jpg"
+            image: "/uiux_course.jpeg"
         },
         {
             title: "3D animation",
@@ -82,7 +82,7 @@ const WhatYouGet = () => {
             lessons: "45 Lessons",
             hours: "15 Hours",
             size: "Intermediate",
-            image: "/fola.png"
+            image: "/3d.jpeg"
         },
         {
             title: "Full stack development",
@@ -92,7 +92,7 @@ const WhatYouGet = () => {
             lessons: "40 Lessons",
             hours: "12 Hours",
             size: "Intermediate",
-            image: "/lapo.png"
+            image: "/fullstack_course.jpeg"
         },
         {
             title: "Frontend development",
@@ -102,7 +102,7 @@ const WhatYouGet = () => {
             lessons: "35 Lessons",
             hours: "10 Hours",
             size: "Beginner",
-            image: "/vado.jpg"
+            image: "/fronti.jpeg"
         },
         {
             title: "Backend development",
@@ -112,7 +112,7 @@ const WhatYouGet = () => {
             lessons: "36 Lessons",
             hours: "11 Hours",
             size: "Intermediate",
-            image: "/fola.png"
+            image: "/backend_course.jpeg"
         },
         {
             title: "Web development",
@@ -122,7 +122,7 @@ const WhatYouGet = () => {
             lessons: "30 Lessons",
             hours: "8 Hours",
             size: "Beginner",
-            image: "/lapo.png"
+            image: "/webi.jpeg"
         },
         {
             title: "Digital Marketing",
@@ -132,7 +132,7 @@ const WhatYouGet = () => {
             lessons: "25 Lessons",
             hours: "7 Hours",
             size: "Beginner",
-            image: "/vado.jpg"
+            image: "/digital_marketing_couse.jpeg"
         },
         {
             title: "Cloud computing",
@@ -142,7 +142,7 @@ const WhatYouGet = () => {
             lessons: "38 Lessons",
             hours: "12 Hours",
             size: "Intermediate",
-            image: "/fola.png"
+            image: "/cloud_course.jpeg"
         }
     ]
 
