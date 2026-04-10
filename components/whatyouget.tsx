@@ -147,7 +147,7 @@ const WhatYouGet = () => {
     ]
 
     return (
-        <div className="w-full px-2 lg:px-40 py-8 md:py-10 lg:py-12 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-x-hidden">
+        <div id="featured-courses" className="w-full px-2 lg:px-40 py-8 md:py-10 lg:py-12 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-x-hidden">
             <div className="mx-auto max-w-8xl lg:mx-auto md:mx-auto sm:mx-auto">
                 {/* Header */}
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-8 text-center font-sf-display bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
@@ -168,16 +168,7 @@ const WhatYouGet = () => {
                                 />
                             </div>
 
-                            {/* Badges */}
-                            <div className="flex gap-1 mb-2 flex-wrap">
-                                <span className="px-2 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">
-                                    {course.lessons}
-                                </span>
-                                <span className="px-2 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">
-                                    {course.hours}
-                                </span>
-                            </div>
-
+                            
                             {/* Course Info */}
                             <h3 className="text-base md:text-lg font-bold mb-2 font-sf-display text-green-200">
                                 {course.title}
@@ -191,16 +182,16 @@ const WhatYouGet = () => {
                                 </p>
                             </div>
                             <a 
-                                href={`https://wa.me/2349162919586?text=Hello!%20I%20found%20your%20${course.title}%20course%20on%20your%20website.%20I'm%20interested%20in%20enrolling.%20Could%20you%20please%20share%20more%20details%20about%20the%20course%20curriculum%20and%20enrollment%20process?`}
+                                href={`https://t.me/belloxxi_01?text=Hello!%20I%20found%20your%20${course.title}%20course%20on%20your%20website.%20I'm%20interested%20in%20enrolling.%20Could%20you%20please%20share%20more%20details%20about%20the%20course%20curriculum%20and%20enrollment%20process?`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full mt-3 px-3 py-1 md:py-3 rounded-3xl text-xs md:text-sm font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-95 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white hover:from-[#128C7E] hover:to-[#0F5132] shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border-2 border-[#25D366] relative overflow-hidden group animate-pulse hover:animate-bounce"
+                                className="w-full mt-3 px-3 py-1 md:py-3 rounded-3xl text-xs md:text-sm font-bold transition-all duration-300 transform hover:scale-[1.02] active:scale-95 bg-gradient-to-r from-[#0088cc] to-[#006699] text-white hover:from-[#006699] hover:to-[#004466] shadow-lg hover:shadow-xl flex items-center justify-center gap-2 border-2 border-[#0088cc] relative overflow-hidden group animate-pulse hover:animate-bounce"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                                 <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.56c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.04.01-.18-.07-.26s-.2-.05-.29-.03c-.12.03-2.13 1.36-6.01 4.17-.57.39-1.08.58-1.54.57-.51-.01-1.49-.29-2.22-.52-.89-.28-1.6-.43-1.54-.91.03-.25.38-.5 1.04-.76 4.08-1.78 6.8-2.95 8.16-3.52 3.89-1.62 4.69-1.9 5.29-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.01.06 0 .22-.01.35z"/>
                                 </svg>
-                                <span className="relative z-10">Inquire on WhatsApp</span>
+                                <span className="relative z-10">Inquire on Telegram</span>
                                 <svg className="w-4 h-4 relative z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>

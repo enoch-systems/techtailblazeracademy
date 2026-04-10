@@ -3,25 +3,47 @@ import React from 'react'
 
 const Footer = () => {
     const footerLinks = {
-        'Quick Links': ['Pages', 'Courses', 'About us'],
-        'More': ['Reviews', 'Blog', 'Contact']
+        'Quick Links': ['Home', 'Courses', 'FAQ']
+    }
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    const scrollToFeaturedCourses = () => {
+        const featuredCourses = document.getElementById('featured-courses')
+        if (featuredCourses) {
+            featuredCourses.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
+    const scrollToFAQ = () => {
+        const faqSection = document.getElementById('faq-section')
+        if (faqSection) {
+            faqSection.scrollIntoView({ behavior: 'smooth' })
+        }
     }
 
     return (
-        <footer className="w-full px-4 py-12 md:px-8 lg:px-16 text-gray-800" style={{background: 'linear-gradient(180deg, #f0fffa 0%, #ccffeb 10%)'}}>
+        <footer className="w-full px-4 py-12 md:px-8 lg:px-16 text-gray-800" style={{background: 'linear-gradient(180deg, #ffffff 70%, #ccffeb 100%)'}}>
             <div className="w-full">
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto text-center md:text-left">
                     {/* Logo */}
                     <div className="md:col-span-1 flex flex-col items-center text-center">
-                        <img 
-                            src="/logo.png" 
-                            alt="Tech Blaze" 
-                            className="h-8 mb-4"
-                        />
-                        <span className="text-xs font-bold z-[200] bg-gradient-to-r from-black via-blue-600 to-blue-400 bg-clip-text text-transparent tracking-wide" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
-                            Tech Trailblazer<br />Academy
-                        </span>
+                        <button 
+                            onClick={() => window.location.reload()}
+                            className="flex flex-col items-center text-center bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
+                        >
+                            <img 
+                                src="/rad.jpeg" 
+                                alt="Tech Blaze" 
+                                className="h-8 mb-4"
+                            />
+                              <span className="text-[10px] font-bold text-black tracking-wide" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                                Tech Trailblazer Academy
+                            </span>
+                        </button>
                     </div>
 
                     {/* Link Columns */}
@@ -31,17 +53,34 @@ const Footer = () => {
                                 {category}
                             </h4>
                             <ul className="space-y-2">
-                                {links.map((link) => (
-                                    <li key={link}>
-                                        <a 
-                                            href="#" 
-                                            className="text-gray-700 hover:text-gray-900 transition-colors text-sm"
-                                            style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}
-                                        >
-                                            {link}
-                                        </a>
-                                    </li>
-                                ))}
+                                {links.map((link) => {
+                                    const handleClick = () => {
+                                        switch(link) {
+                                            case 'Home':
+                                                scrollToTop()
+                                                break
+                                            case 'Courses':
+                                                scrollToFeaturedCourses()
+                                                break
+                                            case 'FAQ':
+                                                scrollToFAQ()
+                                                break
+                                            default:
+                                                break
+                                        }
+                                    }
+                                    return (
+                                        <li key={link}>
+                                            <button 
+                                                onClick={handleClick}
+                                                className="text-gray-700 hover:text-gray-900 transition-colors text-sm bg-transparent border-none cursor-pointer"
+                                                style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}
+                                            >
+                                                {link}
+                                            </button>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     ))}
@@ -49,14 +88,6 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-center items-center max-w-2xl mx-auto">
-                    <div className="flex items-center space-x-4 mb-4 md:mb-0 md:mr-8">
-                        <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
-                            Terms
-                        </a>
-                        <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
-                            Privacy
-                        </a>
-                    </div>
 
                     {/* Social Icons */}
                     <div className="flex space-x-4">

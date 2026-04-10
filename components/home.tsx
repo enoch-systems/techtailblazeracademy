@@ -4,87 +4,90 @@ import Image from 'next/image'
 import Stat from './stat'
 
 const Home = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [currentHeroIndex, setCurrentHeroIndex] = useState(0)
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    const scrollToFeaturedCourses = () => {
+        const featuredCourses = document.getElementById('featured-courses')
+        if (featuredCourses) {
+            featuredCourses.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
+    const scrollToFAQ = () => {
+        const faqSection = document.getElementById('faq-section')
+        if (faqSection) {
+            faqSection.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentHeroIndex((prev) => (prev + 1) % 4)
+            setCurrentHeroIndex((prev) => (prev + 1) % 3)
         }, 5000)
         return () => clearInterval(interval)
     }, [])
 
-    useEffect(() => {
-        document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset'
-        return () => {
-            document.body.style.overflow = 'unset'
-        }
-    }, [mobileMenuOpen])
-
     return (
         <>
             {/* Navigation Bar */}
-            <nav className="shadow-sm" style={{background: '#f0fffa'}}>
+            <nav className="shadow-sm" style={{background: 'linear-gradient(180deg, #ffffff 70%, #f0fffa 100%)'}}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
+                    <div className="flex justify-between items-center ">
                         {/* Logo */}
-                        <div className="flex items-center gap-2">
-                            <Image src="/logo.png" alt="E-Lab Logo" width={80} height={32} className="h-8 w-auto" priority />
-                            <span className="text-xs font-bold bg-gradient-to-r from-black via-blue-600 to-blue-400 bg-clip-text text-transparent tracking-wide" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
-                                Tech Trailblazer<br />Academy
+                        <button 
+                            onClick={() => window.location.reload()}
+                            className="flex flex-col items-start gap-2 bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
+                        >
+                            <Image src="/rad.jpeg" alt="E-Lab Logo" width={80} height={32} className="h-8 mt-4 w-auto" priority />
+                            <span className="text-[10px] font-bold text-black tracking-wide" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                                Tech Trailblazer Academy
                             </span>
-                        </div>
+                        </button>
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center space-x-8">
-                            {['Pages', 'Courses', 'About us', 'Reviews', 'Blog', 'Contact'].map((item, index) => (
-                                <a key={item} href="#" className="text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md border border-gray-300 flex items-center gap-1" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
-                                    {item}
-                                    {(item === 'Pages' || item === 'Courses') && (
-                                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    )}
-                                </a>
-                            ))}
+                            {['Home', 'Courses', 'FAQ'].map((item, index) => {
+                                const handleClick = () => {
+                                    switch(item) {
+                                        case 'Home':
+                                            scrollToTop()
+                                            break
+                                        case 'Courses':
+                                            scrollToFeaturedCourses()
+                                            break
+                                        case 'FAQ':
+                                            scrollToFAQ()
+                                            break
+                                        default:
+                                            break
+                                    }
+                                }
+                                return (
+                                    <button 
+                                        key={item} 
+                                        onClick={handleClick}
+                                        className="text-black hover:text-white px-3 py-1 rounded-full hover:bg-black transition-colors bg-gray-200/80 backdrop-blur-md border border-gray-300 flex items-center gap-1" 
+                                        style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}
+                                    >
+                                        {item}
+                                        {item === 'Courses' && (
+                                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        )}
+                                    </button>
+                                )
+                            })}
                         </div>
 
-                        {/* Mobile Menu Button */}
-                        <div className="lg:hidden">
-                            <button
-                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                className="text-gray-700 hover:text-gray-900 p-2 px-4 flex items-center gap-2 border border-gray-300 rounded-full"
-                            >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    {mobileMenuOpen ? (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    ) : (
-                                        <>
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 6h20" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 12h20" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 18h20" />
-                                        </>
-                                    )}
-                                </svg>
-                                <span className="text-sm font-medium">Menu</span>
-                            </button>
-                        </div>
-                    </div>
+                                            </div>
                 </div>
 
-                {/* Mobile Menu */}
-                {mobileMenuOpen && (
-                    <div className="lg:hidden border-t" style={{background: 'linear-gradient(180deg, #f0fffa 0%, #ffffff 50%, #f0fff4 100%)'}}>
-                        <div className="px-4 py-4 space-y-3">
-                            {['Pages', 'Courses', 'About us', 'Reviews', 'Blog', 'Contact'].map((item) => (
-                                <a key={item} href="#" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-xl border border-gray-300 bg-white text-left font-semibold text-lg">
-                                    {item}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </nav>
+                            </nav>
 
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center rounded-bl-3xl rounded-br-3xl overflow-hidden" style={{background: 'linear-gradient(180deg, #f0fffa 0%, #ccffeb 10%)'}}>
@@ -105,7 +108,7 @@ const Home = () => {
                             <p className="text-lg md:text-xl lg:text-3xl text-black max-w-xl mx-auto lg:mx-0 animate-[slideUp_0.8s_ease-out_0.5s_forwards]" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Learn from industry experts and gain the skills to advance your career.
                             </p>
-                            <button className="bg-blue-600 text-white hover:bg-blue-700 px-8 lg:px-10 py-3 lg:py-4 text-lg lg:text-xl font-medium rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 mx-auto lg:mx-0 animate-[slideUp_0.8s_ease-out_0.7s_forwards]" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                            <button onClick={scrollToFeaturedCourses} className="bg-blue-600 text-white hover:bg-blue-700 px-8 lg:px-10 py-3 lg:py-4 text-lg lg:text-xl font-medium rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 mx-auto lg:mx-0 animate-[slideUp_0.8s_ease-out_0.7s_forwards]" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
@@ -116,7 +119,7 @@ const Home = () => {
                         {/* Hero Image */}
                         <div className="relative flex justify-center">
                             <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]">
-                                {['/so1.jpeg', '/so4.jpeg', '/so3.jpeg', '/so2.jpeg'].map((src, index) => (
+                                {['/ceoo.png', '/so3.jpeg', '/so2.jpeg'].map((src, index) => (
                                     <Image
                                         key={src}
                                         src={src}
