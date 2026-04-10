@@ -23,7 +23,7 @@ export default function HomePage() {
       
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/2349162919586?text=Hello!%20I'm%20reaching%20out%20from%20the%20Tech%20Trailblazer%20Academy%20website.%20I'm%20interested%20in%20your%20courses%20and%20would%20love%20to%20learn%20more%20about%20your%20programs.%20Could%20you%20please%20provide%20more%20information%20about%20enrollment%20and%20course%20details?"
+        href="https://wa.me/2348034826276?text=Hello!%20I'm%20reaching%20out%20from%20the%20Tech%20Trailblazer%20Academy%20website.%20I'm%20interested%20in%20your%20courses%20and%20would%20love%20to%20learn%20more%20about%20your%20programs.%20Could%20you%20please%20provide%20more%20information%20about%20enrollment%20and%20course%20details?"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-[10000000] bg-white rounded-full p-1 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-pulse"
