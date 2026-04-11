@@ -77,10 +77,10 @@ const FAQ = () => {
                     </h2>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
-                            <div 
-                                key={index} 
-                                className={`bg-gray-100 rounded-3xl p-4 md:p-6 cursor-pointer transition-all duration-300 hover:bg-gray-200 ${isVisible ? 'animate-[slideInLeft_0.5s_ease-out_forwards]' : 'opacity-0'}`}
-                                style={{ animationDelay: `${index * 0.1}s` }}
+                            <div
+                                key={index}
+                                className={`bg-gray-100 rounded-3xl p-4 md:p-6 cursor-pointer transition-all duration-300 hover:bg-gray-200 ${isVisible ? 'animate-[slideInLeft_1.5s_ease-out_forwards]' : 'opacity-0'}`}
+                                style={{ animationDelay: `${index * 0.4}s` }}
                                 onClick={() => toggleFAQ(index)}
                             >
                                 <div className="flex justify-between items-center">

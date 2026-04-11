@@ -185,13 +185,13 @@ const WhatYouGet = () => {
     return (
         <>
             <style jsx>{`
-                @keyframes slideInLeft {
+                @keyframes slideInUp {
                     0% {
-                        transform: translateX(-100px);
+                        transform: translateY(100px);
                         opacity: 0;
                     }
                     100% {
-                        transform: translateX(0);
+                        transform: translateY(0);
                         opacity: 1;
                     }
                 }
@@ -206,7 +206,7 @@ const WhatYouGet = () => {
                 {/* Course Cards */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4 lg:gap-6 overflow-x-hidden">
                     {courses.map((course, index) => (
-                        <div key={index} className={`rounded-xl p-2 md:p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 bg-white text-black hover:bg-gray-50 border border-gray-200 ${isVisible ? 'animate-[slideInLeft_0.6s_ease-out_forwards]' : 'opacity-0'}`} style={{ animationDelay: `${index * 0.1}s` }}>
+                        <div key={index} className={`rounded-xl p-2 md:p-4 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 bg-white text-black hover:bg-gray-50 border border-gray-200 ${isVisible ? 'animate-[slideInUp_1s_ease-out_forwards]' : 'opacity-0'}`} style={{ animationDelay: `${Math.floor(index / 2) * 0.5}s` }}>
                             {/* Course Image */}
                             <div className="relative w-full h-24 md:h-32 mb-2 rounded-lg overflow-hidden">
                                 <Image

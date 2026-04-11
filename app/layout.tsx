@@ -90,6 +90,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            `,
+          }}
+        />
         <meta name="facebook-domain-verification" content="e2j94472mzvqja3oju9ef3orm7o3r4" />
         <script
           dangerouslySetInnerHTML={{
