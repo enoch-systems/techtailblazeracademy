@@ -2,6 +2,7 @@
 
 import Home from '@/components/home'
 import Video from '@/components/video'
+import Benefits from '@/components/benefits'
 import WhatYouGet from '@/components/whatyouget'
 import Join from '@/components/join'
 import FAQ from '@/components/faq'
@@ -13,6 +14,7 @@ export default function HomePage() {
     <main>
       <Home />
       <Video />
+      <Benefits />
       <WhatYouGet />
       <Join />
       <FAQ />
