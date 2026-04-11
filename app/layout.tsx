@@ -94,19 +94,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               if (typeof window !== 'undefined') {
-                // Set flag before page unload
-                window.addEventListener('beforeunload', () => {
-                  sessionStorage.setItem('scrollToTop', 'true');
-                });
-
-                // Check flag on page load and scroll to top
-                if (sessionStorage.getItem('scrollToTop') === 'true') {
-                  sessionStorage.removeItem('scrollToTop');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-
-                // Also scroll to top on initial load
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Disable browser scroll restoration
+                window.history.scrollRestoration = 'manual';
+                
+                // Scroll to top immediately
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+                
+                // Also scroll after a short delay to ensure it works
+                setTimeout(() => {
+                  window.scrollTo(0, 0);
+                }, 100);
               }
             `,
           }}
