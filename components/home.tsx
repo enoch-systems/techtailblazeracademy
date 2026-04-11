@@ -42,7 +42,7 @@ const Home = () => {
                             onClick={() => window.location.reload()}
                             className="flex flex-col items-start gap-2 bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity"
                         >
-                            <Image src="/rad.jpeg" alt="E-Lab Logo" width={80} height={32} className="h-8 mt-4 w-auto" priority />
+                            <Image src="/rad.jpeg" alt="E-Lab Logo" width={80} height={32} className="h-8 mt-4 w-auto" priority loading="eager" />
                             <span className="text-[10px] font-bold text-black tracking-wide" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Tech Trailblazer Academy
                             </span>
@@ -90,22 +90,22 @@ const Home = () => {
                             </nav>
 
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center rounded-bl-3xl rounded-br-3xl overflow-hidden" style={{background: 'linear-gradient(180deg, #f0fffa 0%, #ccffeb 10%)'}}>
+            <section className="relative min-h-screen flex items-center rounded-bl-3xl rounded-br-3xl overflow-hidden px-4 md:px-8" style={{background: 'linear-gradient(180deg, #f0fffa 0%, #ccffeb 10%)'}}>
                 {/* Stats Overlay - Desktop Only */}
                 <div className="hidden lg:block absolute bottom-8 left-0 right-0 z-10 px-8">
                     <Stat />
                 </div>
                 
-                <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-0 lg:ml-16 w-full">
+                <div className="max-w-9xl mx-auto px-4 sm:px-6 md:px-8 lg:px-0 lg:ml-16 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Hero Content */}
-                        <div className="text-center lg:text-left mt-6 lg:-mt-75 space-y-6 relative z-10 px-4 sm:px-6 lg:px-0">
-                            <h1 className="text-5xl lg:text-8xl font-semibold text-gray-900" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '-0.005em'}}>
+                        <div className="text-center md:text-left lg:text-left mt-6 lg:-mt-75 space-y-4 md:space-y-6 relative z-10 px-4 sm:px-6 md:px-8 lg:px-0">
+                            <h1 className="text-4xl md:text-5xl lg:text-8xl font-semibold text-gray-900" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '-0.005em'}}>
                                 <span className="inline-block animate-[slideUp_0.6s_ease-out_forwards]">LEARN.</span>{' '}
                                 <span className="inline-block animate-[slideUp_0.6s_ease-out_0.15s_forwards]">GROW.</span><br/>
                                 <span className="inline-block animate-[slideUp_0.6s_ease-out_0.3s_forwards]">SUCCEED.</span>
                             </h1>
-                            <p className="text-lg md:text-xl lg:text-3xl text-black max-w-xl mx-auto lg:mx-0 animate-[slideUp_0.8s_ease-out_0.5s_forwards]" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                            <p className="text-base md:text-lg lg:text-xl lg:text-3xl text-black max-w-xl mx-auto md:mx-auto lg:mx-0 animate-[slideUp_0.8s_ease-out_0.5s_forwards]" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                                 Learn from industry experts and gain the skills to advance your career.
                             </p>
                             <button onClick={scrollToFeaturedCourses} className="bg-blue-600 text-white hover:bg-blue-700 px-8 lg:px-10 py-3 lg:py-4 text-lg lg:text-xl font-medium rounded-full transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 mx-auto lg:mx-0 animate-[slideUp_0.8s_ease-out_0.7s_forwards]" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
@@ -126,8 +126,11 @@ const Home = () => {
                                         alt={`Professional woman ${index + 1}`}
                                         width={700}
                                         height={800}
+                                        sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 750px"
+                                        quality={85}
                                         className={`rounded-lg object-cover absolute inset-0 transition-opacity duration-1000 scale-110 ${currentHeroIndex === index ? 'opacity-100' : 'opacity-0'}`}
-                                        priority
+                                        priority={index === 0}
+                                        loading={index === 0 ? "eager" : "lazy"}
                                     />
                                 ))}
                             </div>

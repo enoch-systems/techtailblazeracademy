@@ -3,7 +3,9 @@ import React, { useState, useRef, useEffect } from 'react'
 
 const Video = () => {
     const [isPlaying, setIsPlaying] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
     const iframeRef = useRef<HTMLIFrameElement>(null)
+    const headingRef = useRef<HTMLHeadingElement>(null)
 
     const togglePlayPause = () => {
         // For now just toggle the state - basic YouTube embed controls itself
@@ -38,6 +40,25 @@ const Video = () => {
         return () => observer.disconnect()
     }, [])
 
+    useEffect(() => {
+        const heading = headingRef.current
+        if (!heading) return
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true)
+                    }
+                })
+            },
+            { threshold: 0.3 }
+        )
+
+        observer.observe(heading)
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <>
             <style jsx>{`
@@ -59,15 +80,29 @@ const Video = () => {
                         filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
                     }
                 }
+                @keyframes slideInRight {
+                    0% {
+                        transform: translateX(100px);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
             `}</style>
-        <div className="w-full px-4 py-12 md:px-8 lg:px-16">
-            <div className="mx-auto max-w-8xl grid gap-8 lg:grid-cols-2 items-center">
+        <div className="w-full px-4 py-12 md:px-8 md:py-16 lg:px-16 lg:py-20">
+            <div className="mx-auto max-w-8xl grid gap-6 md:gap-8 lg:grid-cols-2 items-center">
                 {/* Left Content */}
-                <div className="space-y-6 order-2 lg:order-1">
-                    <h2 className="text-4xl md:text-6xl font-bold text-black uppercase tracking-tighter leading-tight" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                <div className="space-y-4 md:space-y-6 order-2 lg:order-1">
+                    <h2 
+                        ref={headingRef}
+                        className={`text-3xl md:text-4xl lg:text-6xl font-bold text-black uppercase tracking-tighter leading-tight ${isVisible ? 'animate-[slideUp_0.8s_ease-out_forwards]' : 'opacity-0'}`}
+                        style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}
+                    >
                         A Platform Designed <br /> For Success
                     </h2>
-                    <p className="text-lg text-black " style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
+                    <p className={`text-base md:text-lg text-black ${isVisible ? 'animate-[slideInRight_0.8s_ease-out_0.2s_forwards]' : 'opacity-0'}`} style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>
                         Our platform is designed to support your learning journey and help you excel in your career with confidence.
                     </p>
                     <a href="https://chat.whatsapp.com/Bi5XuFToVdjBPRvIawWz5W" target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white hover:bg-green-600 px-8 py-3 text-lg font-medium rounded-full transition-all flex items-center justify-center gap-2 relative animate-[zoomSmoke_3s_ease-in-out_infinite] hover:scale-110 hover:shadow-2xl hover:shadow-black/50" style={{fontFamily: 'SF Pro, -apple-system, BlinkMacSystemFont, sans-serif'}}>

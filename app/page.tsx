@@ -5,7 +5,7 @@ import Video from '@/components/video'
 import WhatYouGet from '@/components/whatyouget'
 import Join from '@/components/join'
 import FAQ from '@/components/faq'
-import TelegramButton from '@/components/tele'
+import WhatsAppButton from '@/components/whatsapp'
 import Footer from '@/components/footer'
 
 export default function HomePage() {
@@ -17,7 +17,7 @@ export default function HomePage() {
       <Join />
       <FAQ />
       <div className="flex justify-center py-8">
-        <TelegramButton />
+        <WhatsAppButton />
       </div>
       <Footer />
     </main>

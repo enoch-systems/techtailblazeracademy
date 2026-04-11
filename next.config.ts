@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: true,
+    unoptimized: false,
     // Allow image optimizer to load remote images from our configured domains.
     // This is required when using <Image> with remote URLs (e.g. Cloudinary).
     contentSecurityPolicy:
@@ -33,6 +34,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['next/image'],
   },
+  // Enable compression for better performance
+  compress: true,
 };
 
 export default nextConfig;
