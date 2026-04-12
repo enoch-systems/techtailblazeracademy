@@ -110,7 +110,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <meta name="facebook-domain-verification" content="5gelj1g8jdyj8p39colxaobzad6o7d" />
+        <meta name="facebook-domain-verification" content="duxa7kyhhskwb27009uj5ns45kvc9o" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
