@@ -122,8 +122,28 @@ export default function RootLayout({
               t.src=v;s=b.getElementsByTagName(e)[0];
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
+              fbq('init', '2105318860009966');
               fbq('track', 'PageView');
+
+              // Track page views on route changes for Next.js
+              if (typeof window !== 'undefined' && window.fbq) {
+                const originalPushState = history.pushState;
+                const originalReplaceState = history.replaceState;
+
+                history.pushState = function(...args) {
+                  originalPushState.apply(this, args);
+                  setTimeout(() => window.fbq('track', 'PageView'), 0);
+                };
+
+                history.replaceState = function(...args) {
+                  originalReplaceState.apply(this, args);
+                  setTimeout(() => window.fbq('track', 'PageView'), 0);
+                };
+
+                window.addEventListener('popstate', () => {
+                  setTimeout(() => window.fbq('track', 'PageView'), 0);
+                });
+              }
             `,
           }}
         />
@@ -132,7 +152,7 @@ export default function RootLayout({
             height="1"
             width="1"
             style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=956502080191092&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=2105318860009966&ev=PageView&noscript=1"
           />
         </noscript>
         <script
