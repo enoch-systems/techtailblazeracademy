@@ -10,8 +10,6 @@ const WhatYouGet = () => {
         {
             title: "Cybersecurity",
             description: "Learn to protect systems, networks, and data from digital attacks and security breaches.",
-            price: "₦75,000",
-            originalPrice: "₦450,000",
             duration: "3 Months",
             lessons: "40 Lessons",
             hours: "12 Hours",
@@ -21,8 +19,6 @@ const WhatYouGet = () => {
         {
             title: "Data science",
             description: "Analyze complex data, build predictive models, and extract insights from large datasets.",
-            price: "₦85,000",
-            originalPrice: "₦500,000",
             duration: "4 Months",
             lessons: "35 Lessons",
             hours: "10 Hours",
@@ -32,8 +28,6 @@ const WhatYouGet = () => {
         {
             title: "AI automation",
             description: "Build intelligent automated systems using machine learning and advanced AI techniques.",
-            price: "₦80,000",
-            originalPrice: "₦480,000",
             duration: "4 Months",
             lessons: "42 Lessons",
             hours: "14 Hours",
@@ -43,8 +37,6 @@ const WhatYouGet = () => {
         {
             title: "Computer networking",
             description: "Master network protocols, infrastructure, and system connectivity fundamentals.",
-            price: "₦45,000",
-            originalPrice: "₦250,000",
             duration: "2 Months",
             lessons: "30 Lessons",
             hours: "9 Hours",
@@ -54,8 +46,6 @@ const WhatYouGet = () => {
         {
             title: "Ethical hacking",
             description: "Learn penetration testing and security assessment to protect systems from vulnerabilities.",
-            price: "₦70,000",
-            originalPrice: "₦420,000",
             duration: "3 Months",
             lessons: "38 Lessons",
             hours: "13 Hours",
@@ -65,8 +55,6 @@ const WhatYouGet = () => {
         {
             title: "Graphic Design",
             description: "Create stunning visual content using industry-standard design tools and principles.",
-            price: "₦50,000",
-            originalPrice: "₦300,000",
             duration: "2 Months",
             lessons: "28 Lessons",
             hours: "8 Hours",
@@ -76,8 +64,6 @@ const WhatYouGet = () => {
         {
             title: "UI/UX design",
             description: "Design beautiful and intuitive user interfaces with modern design principles.",
-            price: "₦60,000",
-            originalPrice: "₦350,000",
             duration: "3 Months",
             lessons: "32 Lessons",
             hours: "9 Hours",
@@ -87,8 +73,6 @@ const WhatYouGet = () => {
         {
             title: "3D animation",
             description: "Create stunning 3D animations and visual effects using professional animation software.",
-            price: "₦90,000",
-            originalPrice: "₦400,000",
             duration: "4 Months",
             lessons: "45 Lessons",
             hours: "15 Hours",
@@ -98,8 +82,6 @@ const WhatYouGet = () => {
         {
             title: "Full stack development",
             description: "Master both frontend and backend development to build complete web applications.",
-            price: "₦100,000",
-            originalPrice: "₦550,000",
             duration: "4 Months",
             lessons: "40 Lessons",
             hours: "12 Hours",
@@ -109,8 +91,6 @@ const WhatYouGet = () => {
         {
             title: "Frontend development",
             description: "Build responsive and interactive user interfaces with modern frontend technologies.",
-            price: "₦48,000",
-            originalPrice: "₦280,000",
             duration: "2 Months",
             lessons: "35 Lessons",
             hours: "10 Hours",
@@ -120,8 +100,6 @@ const WhatYouGet = () => {
         {
             title: "Backend development",
             description: "Develop robust server-side applications and APIs with modern backend technologies.",
-            price: "₦48,000",
-            originalPrice: "₦280,000",
             duration: "2 Months",
             lessons: "36 Lessons",
             hours: "11 Hours",
@@ -131,8 +109,6 @@ const WhatYouGet = () => {
         {
             title: "Web development",
             description: "Learn fundamental web technologies to build modern websites and web applications.",
-            price: "₦55,000",
-            originalPrice: "₦320,000",
             duration: "3 Months",
             lessons: "30 Lessons",
             hours: "8 Hours",
@@ -142,8 +118,6 @@ const WhatYouGet = () => {
         {
             title: "Digital Marketing",
             description: "Master digital marketing strategies including SEO, social media, and online advertising.",
-            price: "₦40,000",
-            originalPrice: "₦220,000",
             duration: "2 Months",
             lessons: "25 Lessons",
             hours: "7 Hours",
@@ -153,8 +127,6 @@ const WhatYouGet = () => {
         {
             title: "Cloud computing",
             description: "Learn cloud architecture, deployment, and management using major cloud platforms.",
-            price: "₦65,000",
-            originalPrice: "₦380,000",
             duration: "3 Months",
             lessons: "38 Lessons",
             hours: "12 Hours",
@@ -229,14 +201,6 @@ const WhatYouGet = () => {
                             <h3 className="text-base md:text-lg font-bold mb-2 font-sf-display text-gray-900">
                                 {course.title}
                             </h3>
-                            <div className="flex flex-col items-start">
-                                <span className="text-xs text-gray-500 line-through font-sf-display">
-                                    {course.originalPrice} <span className="text-xs text-gray-600 font-semibold">(Bootcamp Price)</span>
-                                </span>
-                                <p className="text-base md:text-lg font-bold font-sf-display text-green-600">
-                                    {course.price}
-                                </p>
-                            </div>
                             <a 
                                 href="https://chat.whatsapp.com/Bi5XuFToVdjBPRvIawWz5W"
                                 target="_blank"
