@@ -25,7 +25,7 @@ export default function FacebookPixel() {
       script.src = 'https://connect.facebook.net/en_US/fbevents.js';
       script.onload = () => {
         if (window.fbq) {
-          window.fbq('init', '2014512242756952');
+          window.fbq('init', '808967788955487');
           window.fbq('track', 'PageView');
           lastTrackedUrl.current = window.location.href;
         }
